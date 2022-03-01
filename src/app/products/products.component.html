@@ -1,3 +1,74 @@
-<h1>{{StoreName}}</h1>
+<!-- lab1 -->
+<!-- <h1>{{StoreName}}</h1>
 <img [src]="StoreLogo" alt="">
-<h3>We offer an explicit discount of: {{Discount}} </h3>
+<h3>We offer an explicit discount of: {{Discount}} </h3> -->
+
+<!-- lab2 -->
+<h1>{{StoreName | uppercase}}</h1>
+<h3 *ngIf="Discount != 'No Discount'">We offer an explicit discount of : {{Discount | percent}}</h3>
+
+<br>
+
+<select class="form-select" name="category" id="mySelect">
+    <option [value]="cat.ID" *ngFor="let cat of CategoryList">{{cat.Name}}</option>
+</select>
+
+<br>
+
+<div *ngIf="IsPurchased ; then thenBlock ;else codeBlock"></div>
+<ng-template #thenBlock>
+    <div >
+        Thank you {{ClientName}} for purchasing from our store
+    </div>
+</ng-template>
+<ng-template #codeBlock>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Img</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ProductList">
+                <td >{{item.ID}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Price}}</td>
+                <td>{{item.Quantity}}</td>
+                <td><img [src]="item.Img" style="width: 50px; height: 50px;"/></td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+
+<br>
+
+<!-- <table class="table table-bordered" *ngIf="!IsPurchased">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Img</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of ProductList">
+            <td >{{item.ID}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Quantity}}</td>
+            <td><img [src]="item.Img" style="width: 50px; height: 50px;"/></td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="IsPurchased">
+    Thank you {{ClientName}} for purchasing from our store
+</div> -->
+
+<input type="text" [(ngModel)] = "ClientName" >
+<input type="button" value="Buy" (click) = "Purchase()">

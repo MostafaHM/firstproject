@@ -19,13 +19,21 @@ export class ProductsComponent implements OnInit {
 
   constructor() { 
     this.Discount = DiscountOffers.lowDiscount;
-    this.StoreName = "Mega Store";
-    this.StoreLogo = "../../assets/images.png";
-    this.ProductList = [];
-    this.CategoryList = [];
-    this.ClientName = "Mohamed";
+    this.StoreName = "Mostafa Store";
+    this.StoreLogo = "../../assets/image.png";
+    this.ProductList = [{ID:1,Img:"../../assets/5.JPG",Name:"Apple iPhone 13",Price:1144,Quantity:3},
+                        {ID:2,Img:"../../assets/4.JPG",Name:"Apple iPhone 12",Price:1038,Quantity:5},
+                        {ID:3,Img:"../../assets/8.JPG",Name:"Samsung Galaxy S21 Ultra",Price:1198,Quantity:11},
+                        {ID:4,Img:"../../assets/9.JPG",Name:"Xiaomi 11T PRO",Price:585,Quantity:15}];
+    this.CategoryList = [{ID:1,Name:"Mobile"},
+                          {ID:2,Name:"Laptop"},
+                          {ID:3,Name:"Electronics"}];
+    this.ClientName = "Mostafa";
     this.IsPurchased = false;
   }
+  Purchase() {
+    this.IsPurchased = true;
+ }
 
   ngOnInit(): void {
   }
