@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ProductsComponent } from './products/products.component';
+import { ProductServiceService } from './services/product-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'firstproject';
+  @ViewChild(ProductsComponent) products!:ProductsComponent;
+  
+  
 }

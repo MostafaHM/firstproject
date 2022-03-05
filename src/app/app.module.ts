@@ -1,3 +1,4 @@
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,8 @@ import { ProductsComponent } from './products/products.component';
 import { LeftNavComponent } from './products/left-nav/left-nav.component';
 import { RightNavComponent } from './products/right-nav/right-nav.component';
 import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

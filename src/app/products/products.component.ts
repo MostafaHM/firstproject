@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductServiceService } from '../services/product-service.service';
 import { DiscountOffers } from '../Shared Classes and types/DiscountOffers';
 import { ICategory } from '../Shared Classes and types/ICategory';
 import { IProduct } from '../Shared Classes and types/IProduct';
@@ -17,7 +18,9 @@ export class ProductsComponent implements OnInit {
   ClientName:string;
   IsPurchased:boolean;
 
-  constructor() { 
+
+
+  constructor(private service:ProductServiceService) { 
     this.Discount = DiscountOffers.lowDiscount;
     this.StoreName = "Mostafa Store";
     this.StoreLogo = "../../assets/image.png";
@@ -31,8 +34,14 @@ export class ProductsComponent implements OnInit {
     this.ClientName = "Mostafa";
     this.IsPurchased = false;
   }
+
   Purchase() {
     this.IsPurchased = true;
+ }
+
+ renderValues(){
+  this.ProductList = this.service.getAllProducts();
+  this.IsPurchased = false;
  }
 
   ngOnInit(): void {
