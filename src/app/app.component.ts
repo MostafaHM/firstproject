@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProductsComponent } from './products/products.component';
-import { ProductServiceService } from './services/product-service.service';
 
 
 @Component({

@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit {
 
  renderValues(){
   this.ProductList = this.service.getAllProducts();
-  this.IsPurchased = false;
+ 
  }
 
   ngOnInit(): void {

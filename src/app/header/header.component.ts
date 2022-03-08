@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  headerPhoto:string = "./assets/mm.png";
   ngOnInit(): void {
   }
 

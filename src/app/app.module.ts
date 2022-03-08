@@ -1,4 +1,4 @@
-import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,9 +7,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
-import { LeftNavComponent } from './products/left-nav/left-nav.component';
-import { RightNavComponent } from './products/right-nav/right-nav.component';
+
+
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
 
 
 
@@ -19,13 +26,18 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    LeftNavComponent,
-    RightNavComponent
+
+    HomeComponent,
+    UserComponent,
+    PostsComponent,
+    PageNotFoundComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   
   ],
   providers: [],
